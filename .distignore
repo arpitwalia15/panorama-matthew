@@ -1,0 +1,37 @@
+# Development tools and caches
+node_modules/
+bower_components/
+.sass-cache/
+.cache/
+grunt/
+gulp/
+
+# Source and build config files (optional if not used in production)
+*.scss
+*.map
+webpack.config.js
+package.json
+package-lock.json
+yarn.lock
+.eslintrc
+
+# Logs and coverage
+error_log
+*.log
+*.clover
+
+# Backup and temp files
+*.bak
+*.tmp
+*.mo.orig
+
+# Tests and demos
+tests/
+unit-tests/
+test/
+demo/
+demos/
+
+# Hidden system files
+.DS_Store
+Thumbs.db
