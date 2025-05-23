@@ -64,22 +64,25 @@
 
 <?php if (have_comments()) : ?>
 
-	<h3 id="comments-title"><?php
-							// translators: %2$s, %1$s represents the field key that caused the error.
-							printf(
-								esc_html(
-									_n(
-										'%1$s Response to %2$s',
-										'%1$s Responses to %2$s',
-										get_comments_number(),
-										'psp_projects'
-									)
-								),
-								number_format_i18n(get_comments_number()),
-								get_the_title()
-							);
+	<h3 id="comments-title">
+		<?php
+		// translators: 1: Number of comments, 2: Post title.
+		printf(
+			/* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
+			_n(
+				'%1$s Response to %2$s',
+				'%1$s Responses to %2$s',
+				get_comments_number(),
+				'psp_projects'
+			),
+			esc_html(number_format_i18n(get_comments_number())),
+			'<em>' . esc_html(get_the_title()) . '</em>'
+		);
+		?>
+	</h3>
 
-							?></h3>
+
+
 
 
 
