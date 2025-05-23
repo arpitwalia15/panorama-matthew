@@ -968,7 +968,7 @@ add_filter('posts_where', 'psppan_posts_where');
 
  */
 
-
+	
 
 add_filter('pre_get_posts', 'pan_limit_psp_to_granted_users');
 

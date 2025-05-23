@@ -52,15 +52,15 @@
 
 
 
-            $project_type = apply_filters('project_type', $instance['project_type']);
+            $pan_project_type = apply_filters('pan_project_type', $instance['project_type']);
 
-            $project_status = apply_filters('project_status', $instance['project_status']);
+            $pan_project_status = apply_filters('pan_project_status', $instance['project_status']);
 
-            $project_access = apply_filters('project_access', $instance['project_access']);
+            $pan_project_access = apply_filters('pan_project_access', $instance['project_access']);
 
 
 
-            $widget_shortcode = '[project_list type="'.$project_type.'" status="'.$project_status.'" access="'.$project_access.'"]';
+            $widget_shortcode = '[project_list type="'.$pan_project_type.'" status="'.$pan_project_status.'" access="'.$pan_project_access.'"]';
 
 
 
@@ -108,25 +108,25 @@
 
 
 
-            $project_type = wp_strip_all_tags($instance['project_type']);
+            $pan_project_type = wp_strip_all_tags($instance['project_type']);
 
-            $project_status = wp_strip_all_tags($instance['project_status']);
+            $pan_project_status = wp_strip_all_tags($instance['project_status']);
 
-            $project_access = wp_strip_all_tags($instance['project_access']);
+            $pan_project_access = wp_strip_all_tags($instance['project_access']);
 
 
 
             // Set defaults
 
-            if(empty($project_type)) { $project_type = 'all'; }
+            if(empty($pan_project_type)) { $pan_project_type = 'all'; }
 
-            if(empty($project_status)) { $project_status = 'all'; }
+            if(empty($pan_project_status)) { $pan_project_status = 'all'; }
 
-            if(empty($project_access)) { $project_access = 'user'; }
+            if(empty($pan_project_access)) { $pan_project_access = 'user'; }
 
 
 
-            $project_types = get_terms('psp_tax');
+            $pan_project_types = get_terms('psp_tax');
 
 
 
@@ -136,15 +136,15 @@
 
             <p>
 
-                <label for="<?php echo esc_attr($this->get_field_id('project_type')); ?>">Type</label>
+                <label for="<?php echo esc_attr($this->get_field_id('pan_project_type')); ?>">Type</label>
 
-                <select id="<?php echo esc_attr($this->get_field_id('project_type')); ?>" name="<?php echo esc_attr($this->get_field_name('project_type')); ?>">
+                <select id="<?php echo esc_attr($this->get_field_id('pan_project_type')); ?>" name="<?php echo esc_attr($this->get_field_name('pan_project_type')); ?>">
 
                         <option value="all">All</option>
 
-                    <?php foreach($project_types as $type) { ?>
+                    <?php foreach($pan_project_types as $type) { ?>
 
-                        <option value="<?php echo esc_attr($type->slug); ?>" <?php if($project_type == $type->slug) { echo 'selected'; } ?>><?php echo esc_html($type->name); ?></option>
+                        <option value="<?php echo esc_attr($type->slug); ?>" <?php if($pan_project_type == $type->slug) { echo 'selected'; } ?>><?php echo esc_html($type->name); ?></option>
 
                     <?php } ?>
 
@@ -154,15 +154,15 @@
 
 
 
-            <p><label for="<?php echo esc_attr($this->get_field_id('project_status')); ?>">Status</label>
+            <p><label for="<?php echo esc_attr($this->get_field_id('pan_project_status')); ?>">Status</label>
 
-                <select id="<?php echo esc_attr($this->get_field_id('project_status')); ?>" name="<?php echo esc_attr($this->get_field_name('project_status')); ?>">
+                <select id="<?php echo esc_attr($this->get_field_id('pan_project_status')); ?>" name="<?php echo esc_attr($this->get_field_name('pan_project_status')); ?>">
 
-                    <option value="all" <?php if($project_status == 'all') { echo 'selected'; } ?>>All</option>
+                    <option value="all" <?php if($pan_project_status == 'all') { echo 'selected'; } ?>>All</option>
 
-                    <option value="active" <?php if($project_status == 'active') { echo 'selected'; } ?>>Active</option>
+                    <option value="active" <?php if($pan_project_status == 'active') { echo 'selected'; } ?>>Active</option>
 
-                    <option value="complete" <?php if($project_status == 'complete') { echo 'selected'; } ?>>Complete</option>
+                    <option value="complete" <?php if($pan_project_status == 'complete') { echo 'selected'; } ?>>Complete</option>
 
                 </select>
 
@@ -170,7 +170,7 @@
 
 
 
-            <p><input type="checkbox" name="<?php echo esc_attr($this->get_field_name('project_access')); ?>" id="<?php echo esc_attr($this->get_field_id('project_access')); ?>" value="user" <?php if($project_access == 'user') { echo 'checked'; } else { echo 'unchecked'; } ?>> <label for="<?php echo esc_attr($this->get_field_id('project_access')); ?>">Only display projects current user has permission to access</label></p>
+            <p><input type="checkbox" name="<?php echo esc_attr($this->get_field_name('pan_project_access')); ?>" id="<?php echo esc_attr($this->get_field_id('pan_project_access')); ?>" value="user" <?php if($pan_project_access == 'user') { echo 'checked'; } else { echo 'unchecked'; } ?>> <label for="<?php echo esc_attr($this->get_field_id('pan_project_access')); ?>">Only display projects current user has permission to access</label></p>
 
 
 

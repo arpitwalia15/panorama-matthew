@@ -6,7 +6,7 @@
 
  *
 
- * Be sure to replace all instances of 'yourprefix_' with your project's prefix.
+ * Be sure to replace all instances of 'pan_' with your project's prefix.
 
  * http://nacin.com/2010/05/11/in-wordpress-prefix-everything/
 
@@ -51,8 +51,7 @@ if ( file_exists( CMB2_DIR . '/cmb2/init.php' ) ) {
 }
 
 
-
-add_action( 'cmb2_init', 'yourprefix_register_conditionals_demo_metabox' );
+add_action( 'cmb2_init', 'pan_register_conditionals_demo_metabox' );
 
 /**
 
@@ -60,13 +59,13 @@ add_action( 'cmb2_init', 'yourprefix_register_conditionals_demo_metabox' );
 
  */
 
-function yourprefix_register_conditionals_demo_metabox() {
+function pan_register_conditionals_demo_metabox() {
 
 
 
 	// Start with an underscore to hide fields from custom fields list.
 
-	$prefix = '_yourprefix_conditions_demo_';
+	$prefix = '_pan_conditions_demo_';
 
 
 

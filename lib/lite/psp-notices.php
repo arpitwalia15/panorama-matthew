@@ -1,7 +1,7 @@
 <?php
-add_action('admin_notices', 'panorama_admin_notice');
+add_action('admin_notices', 'lpm_admin_notice');
 
-function panorama_admin_notice()
+function lpm_admin_notice()
 {
     global $pagenow, $typenow;
 
@@ -27,7 +27,7 @@ function panorama_admin_notice()
             $safe_url = esc_url($full_url);
 
             // Add query arg to the safe URL
-            $close_url = add_query_arg('panorama_nag_ignore', '0', $safe_url);
+            $close_url = add_query_arg('lpm_nag_ignore', '0', $safe_url);
 
 ?>
 
@@ -70,8 +70,8 @@ function panorama_admin_notice()
 }
 
 
-add_action('admin_init', 'panorama_nag_ignore');
-function panorama_nag_ignore()
+add_action('admin_init', 'lpm_nag_ignore');
+function lpm_nag_ignore()
 {
 
 
@@ -79,7 +79,7 @@ function panorama_nag_ignore()
     $user_id = $current_user->ID;
 
     /* If user clicks to ignore the notice, add that to their user meta */
-    if (isset($_GET['panorama_nag_ignore']) && '0' == $_GET['panorama_nag_ignore']) {
+    if (isset($_GET['lpm_nag_ignore']) && '0' == $_GET['lpm_nag_ignore']) {
 
         add_user_meta($user_id, 'panorama_ignore_notice_new', 'true', true);
     }
@@ -116,7 +116,7 @@ function psppan_promotional_metabox()
 
     <?php
     $request_uri = isset($_SERVER['REQUEST_URI']) ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])) : '';
-    $close_url = add_query_arg('panorama_nag_ignore', '0', psppan_full_url($request_uri));
+    $close_url = add_query_arg('lpm_nag_ignore', '0', psppan_full_url($request_uri));
     ?>
 
     <p><a href="<?php echo esc_url($close_url); ?>">No thanks!</a></p>

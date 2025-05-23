@@ -4,7 +4,7 @@
 
 /* Custom Single.php for project only view */
 
-global $post, $doctype;
+global $post, $lpm_doctype;
 
 
 
@@ -12,7 +12,7 @@ global $post, $doctype;
 
 <!DOCTYPE html>
 
-<html <?php language_attributes( $doctype ); ?>>
+<html <?php language_attributes( $lpm_doctype ); ?>>
 
 <head>
 
@@ -47,13 +47,13 @@ global $post, $doctype;
             wp_enqueue_script('psp-frontend-behavior', PSP_PLUGINURI . '/js/psp-frontend-behavior.js', ['jquery'], '1.2.5', true);
 
             // Localize Ajax URL
-            wp_localize_script('psp-frontend-behavior', 'MyAjax', ['ajaxurl' => admin_url('admin-ajax.php')]);
+            wp_localize_script('psp-frontend-behavior', 'lpmAjax', ['ajaxurl' => admin_url('admin-ajax.php')]);
 
             wp_enqueue_script('html5shiv', PSP_PLUGINURI . '/js/html5shiv.min.js', [], null, false);
             wp_script_add_data('html5shiv', 'conditional', 'lte IE 9');
 
-            wp_enqueue_script('css3-mediaqueries', PSP_PLUGINURI . '/js/css3-mediaqueries.js', [], null, false);
-            wp_script_add_data('css3-mediaqueries', 'conditional', 'lte IE 9');
+            wp_enqueue_script('lpm-css3-mediaqueries', PSP_PLUGINURI . '/js/css3-mediaqueries.js', [], null, false);
+            wp_script_add_data('lpmm-css3-mediaqueries', 'conditional', 'lte IE 9');
 
             wp_enqueue_style('ie-styles', PSP_PLUGINURI . '/css/ie.css', [], null);
             wp_style_add_data('ie-styles', 'conditional', 'IE');

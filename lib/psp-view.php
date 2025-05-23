@@ -327,7 +327,7 @@ function psppan_phases($id, $style = null, $taskStyle = null)
 }
 
 
-function panorama_login_form()
+function lpm_login_form()
 {
     // Sanitize $_SERVER['REQUEST_URI']
     $request_uri = isset($_SERVER['REQUEST_URI']) ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])) : home_url();

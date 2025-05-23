@@ -708,7 +708,7 @@ function psppan_phases($id, $style = null, $taskStyle = null)
 
 
 
-function panorama_login_form()
+function lsm_login_form()
 {
 	// Sanitize the redirect URL from the current request URI
 	$redirect_url = esc_url_raw(add_query_arg([], isset($_SERVER['REQUEST_URI']) ? sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI'])) : home_url()));
