@@ -62,5 +62,5 @@ function psppan_template_hierarchy($template)
 		$file = PSPPAN_BASE_DIR . '/templates/' . $template;
 	}
 
-	return apply_filters('rc_repl_template_' . $template, $file);
+	return apply_filters('rc_repl_template' . $template, $file);
 }

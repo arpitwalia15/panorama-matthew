@@ -107,13 +107,13 @@ add_action('admin_footer', function () {
  */
 function projpan_add_find_user_div()
 {
-	add_action('wp_footer', 'find_users_div');
+	add_action('wp_footer', 'pan_find_users_div');
 }
 
 
 
 
-add_action('cmb2_user_search_field_add_find_users_div', 'cmb2_user_search_field_add_find_users_div');
+add_action('cmb2_user_search_field_add_pan_find_users_div', 'cmb2_user_search_field_add_pan_find_users_div');
 
 
 
@@ -129,7 +129,7 @@ add_action('cmb2_user_search_field_add_find_users_div', 'cmb2_user_search_field_
 
  */
 
-function find_users_div($found_action = '')
+function pan_find_users_div($found_action = '')
 {
 
 ?>

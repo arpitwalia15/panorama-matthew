@@ -78,10 +78,9 @@ function psppan_lite_completion_options($value = false)
 	return $complete_options;
 }
 
-function pano_lite_sanitize_tasks_callback($override_value, $value)
-{
-
-	return $value;
+function pano_lite_sanitize_tasks_callback( $override_value, $value, $object_id, $field_args, $sanitizer_object ) {
+    // Remove HTML tags and extra spaces
+    return trim( strip_tags( $value ) );
 }
 
 add_filter('cmb2_sanitize_tasks', 'cmb2_sanitize_tasks_field', 10, 5);

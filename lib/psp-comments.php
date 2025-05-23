@@ -30,7 +30,7 @@ add_filter( "comments_template", "psppan_comment_template",9);
 
 
 
-function project_status_comment($comment, $args, $depth) {
+function pan_project_status_comment($comment, $args, $depth) {
 
 		$GLOBALS['comment'] = $comment;
 

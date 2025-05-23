@@ -13,7 +13,7 @@ function psppan_comment_template( $comment_template ) {
 
 add_filter( "comments_template", "psppan_comment_template" );
 
-function project_status_comment($comment, $args, $depth) {
+function pan_project_status_comment($comment, $args, $depth) {
 		$GLOBALS['comment'] = $comment;
 		extract($args, EXTR_SKIP);
 		if ( 'div' == $args['style'] ) {

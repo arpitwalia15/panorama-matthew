@@ -848,7 +848,7 @@ function psppan_compute_progress($post_id)
 
 
 
-function panorama_check_access($post_id)
+function pan_panorama_check_access($post_id)
 {
 
 
@@ -970,9 +970,9 @@ add_filter('posts_where', 'psppan_posts_where');
 
 
 
-add_filter('pre_get_posts', 'limit_psp_to_granted_users');
+add_filter('pre_get_posts', 'pan_limit_psp_to_granted_users');
 
-function limit_psp_to_granted_users($query)
+function pan_limit_psp_to_granted_users($query)
 {
 
 
