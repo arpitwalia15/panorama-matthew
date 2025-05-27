@@ -66,9 +66,8 @@
 
 	<h3 id="comments-title">
 		<?php
-		// translators: 1: Number of comments, 2: Post title.
-		printf(
-			/* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */
+		// Translators: %1$s: Number of comments. %2$s: Post title.
+		echo wp_kses_post(sprintf(
 			_n(
 				'%1$s Response to %2$s',
 				'%1$s Responses to %2$s',
@@ -77,9 +76,10 @@
 			),
 			esc_html(number_format_i18n(get_comments_number())),
 			'<em>' . esc_html(get_the_title()) . '</em>'
-		);
+		));
 		?>
 	</h3>
+
 
 
 

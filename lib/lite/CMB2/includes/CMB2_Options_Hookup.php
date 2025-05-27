@@ -63,7 +63,14 @@ class CMB2_Options_Hookup extends CMB2_Hookup
 		}
 
 		// Register setting to cmb2 group.
-		register_setting('psp_projects', $this->option_key);
+		register_setting(
+			'psp_projects', // Option group
+			$this->option_key, // Option name
+			[
+				'sanitize_callback' => [$this, 'sanitize_options'], // Callback method
+			]
+		);
+
 
 		// Handle saving the data.
 		add_action('admin_post_' . $this->option_key, array($this, 'save_options'));

@@ -6,7 +6,7 @@ Tags: project, management, project management, client, dashboard
 
 Requires at least: 5.0
 
-Tested up to: 6.7.2
+Tested up to: 6.8
 
 License: GPLv2 or later
 
